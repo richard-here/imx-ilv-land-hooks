@@ -23,6 +23,7 @@ func (server *Server) Initialize(DbDriver, DbUser, DbPassword, DbPort, DbHost, D
 		DbUser, DbPassword, DbHost, DbPort, DbName)
 	server.DB, err = gorm.Open(DbDriver, DBURL)
 	if err != nil {
+		fmt.Printf("%s", DBURL)
 		fmt.Printf("Cannot connect to %s database", DbDriver)
 		log.Fatal("Error: ", err)
 	} else {

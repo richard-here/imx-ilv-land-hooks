@@ -8,8 +8,10 @@ func (s *Server) initializeRoutes() {
 
 	// Users
 	s.Router.HandleFunc("/users", middlewares.SetMiddlewareJSON(s.CreateUser)).Methods("POST")
+	s.Router.HandleFunc("/users", middlewares.SetMiddlewareJSON(s.GetUsers)).Methods("GET")
 
 	// Subscriptions
 	s.Router.HandleFunc("/subscriptions", middlewares.SetMiddlewareJSON(s.CreateSubscription)).Methods("POST")
+	s.Router.HandleFunc("/subscriptions", middlewares.SetMiddlewareJSON(s.GetAllSubscriptions)).Methods("GET")
 	s.Router.HandleFunc("/subscriptions/{id}", middlewares.SetMiddlewareAuthentication(s.DeleteSubscription)).Methods("DELETE")
 }
