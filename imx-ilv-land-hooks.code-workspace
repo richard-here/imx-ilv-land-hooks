@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "./user"
+		},
+		{
+			"path": "redis"
 		}
 	],
 	"settings": {}
