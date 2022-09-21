@@ -1,0 +1,6 @@
+[mysqld]
+performance_schema=ON
+server-id=223344
+log_bin=mysql-bin
+binlog_format=ROW
+binlog_row_image=FULL
